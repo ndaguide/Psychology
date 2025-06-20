@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NDA Psychology & Logic Puzzle Guide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: #fff;
+      padding: 0;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 2rem 1rem;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 2rem auto;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+    }
+
+    .payment-box, .notice-box, form, .preview-section {
+      margin-bottom: 2rem;
+    }
+
+    .payment-box, .notice-box {
+      padding: 1.5rem;
+      border-radius: 15px;
+    }
+
+    .payment-box {
+      background-color: rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .payment-box h2 {
+      margin-top: 0;
+      color: #ffeb3b;
+    }
+
+    .notice-box {
+      background-color: rgba(255, 0, 0, 0.2);
+      border-left: 5px solid red;
+      color: #ffeaea;
+    }
+
+    label, input, button, p {
+      width: 100%;
+      color: #eee;
+    }
+
+    input {
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+      font-size: 1rem;
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      margin-top: 0.5rem;
+    }
+
+    input::placeholder {
+      color: #ccc;
+    }
+
+    button {
+      margin-top: 1rem;
+      padding: 12px;
+      border-radius: 10px;
+      background-color: #00c853;
+      color: white;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #00b44b;
+    }
+
+    .whatsapp-btn {
+      background-color: #25D366;
+      color: white;
+      padding: 12px;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .preview-section iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 10px;
+      border: none;
+    }
+
+    #pdfViewer {
+      display: none;
+      width: 100%;
+      height: 80vh;
+      border-radius: 10px;
+      border: none;
+      margin-top: 2rem;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #ccc;
+    }
+
+    @media screen and (max-width: 768px) {
+      .container {
+        margin: 1rem;
+        padding: 1rem;
+      }
+
+      header h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>NDA Psychology & Logic Puzzle Guide</h1>
+  </header>
+
+  <div class="container">
+    <div class="notice-box">
+      <strong>⚠️ Important Notice About Access Keys:</strong><br>
+      Each access key is <strong>for one user only</strong> and can be used <strong>only once</strong>.<br>
+      If someone else uses your key, <strong>you will lose access</strong> to the guide permanently.<br>
+      Please <strong>do not share</strong> your key with anyone.
+    </div>
+
+    <div class="preview-section" id="previewSection">
+      <h3>📄 Sample Preview</h3>
+      <p>You can preview a few pages from the guide below before purchasing:</p>
+      <iframe src=""></iframe>
+    </div>
+
+    <div class="payment-box" id="paymentSection">
+      <h2>📌 Get Access to the Full Guide</h2>
+      <p><strong>Payment Amount:</strong> ₦1000</p>
+      <p><strong>Account Name:</strong> Yahaya Sa'ad Abdullahi</p>
+      <p><strong>Bank:</strong> OPay</p>
+      <p><strong>Account Number:</strong> 08138509424</p>
+      <p>After making payment, click the button below to message us your payment proof and receive your access key:</p>
+      <a class="whatsapp-btn" id="whatsappBtn" href="https://wa.me/2348138509424?text=Hello%20I%20have%20made%20payment%20of%20₦1000%20for%20the%20NDA%20Guide.%20Here%20is%20my%20proof:" target="_blank">📱 Message Admin on WhatsApp</a>
+    </div>
+
+    <form id="authForm">
+      <label for="accessKey">🔐 Enter Your Unique Access Key</label>
+      <input type="password" id="accessKey" placeholder="Enter key here" required>
+      <button type="submit">Unlock Full PDF</button>
+    </form>
+
+    <iframe id="pdfViewer" class="no-screenshot" src=""></iframe>
+  </div>
+
+  <div class="footer">
+    &copy; 2025 Nigerian Defence Academy – Psychology Dept. | All Rights Reserved.
+  </div>
+
+  <script>
+    const allowedKeys = {
+      'NDA77I': false,
+      'NDA77II': false,
+      'NDA77III': false,
+      'NDA77IV': false,
+      'NDA77V': false,
+      'NDA77VI': false,
+      'NDA77VII': false,
+      'NDA77VIII': false,
+      'NDA77IX': false,
+      'NDA77X': false,
+      'NDA77XI': false,
+      'NDA77XII': false,
+      'NDA77XIII': false,
+      'NDA77XIV': false,
+      'NDA77XV': false,
+      'NDA77XVI': false,
+      'NDA77XVII': false,
+      'NDA77XVIII': false,
+      'NDA77XIX': false,
+      'NDA77XX': false,
+      'NDA77XXI': false,
+      'NDA77XXII': false,
+      'NDA77XXIII': false,
+      'NDA77XXIV': false,
+      'NDA77XXV': false,
+      'NDA77XXVI': false,
+      'NDA77XXVII': false,
+      'NDA77XXVIII': false,
+      'NDA77XXIX': false,
+      'NDA77XXX': false,
+      'NDA77XXXI': false,
+      'NDA77XXXII': false,
+      'NDA77XXXIII': false,
+      'NDA77XXXIV': false,
+      'NDA77XXXV': false,
+      'NDA77XXXVI': false,
+      'NDA77XXXVII': false,
+      'NDA77XXXVIII': false,
+      'NDA77XXXIX': false,
+      'NDA77XL': false,
+      'NDA77XLI': false,
+      'NDA77XLII': false,
+      'NDA77XLIII': false,
+      'NDA77XLIV': false,
+      'NDA77XLV': false,
+      'NDA77XLVI': false,
+      'NDA77XLVII': false,
+      'NDA77XLVIII': false,
+      'NDA77XLIX': false,
+      'NDA77L': false,
+      'NDA77LI': false,
+      'NDA77LII': false,
+      'NDA77LIII': false,
+      'NDA77LIV': false,
+      'NDA77LV': false,
+      'NDA77LVI': false,
+      'NDA77LVII': false,
+      'NDA77LVIII': false,
+      'NDA77LIX': false,
+      'NDA77LX': false,
+      'NDA77LXI': false,
+      'NDA77LXII': false,
+      'NDA77LXIII': false,
+      'NDA77LXIV': false,
+      'NDA77LXV': false,
+      'NDA77LXVI': false,
+      'NDA77LXVII': false,
+      'NDA77LXVIII': false,
+      'NDA77LXIX': false,
+      'NDA77LXX': false,
+      'NDA77LXXI': false,
+      'NDA77LXXII': false,
+      'NDA77LXXIII': false,
+      'NDA77LXXIV': false,
+      'NDA77LXXV': false,
+      'NDA77LXXVI': false,
+      'NDA77LXXVII': false,
+      'NDA77LXXVIII': false,
+      'NDA77LXXIX': false,
+      'NDA77LXXX': false,
+      'NDA77LXXXI': false,
+      'NDA77LXXXII': false,
+      'NDA77LXXXIII': false,
+      'NDA77LXXXIV': false,
+      'NDA77LXXXV': false,
+      'NDA77LXXXVI': false,
+      'NDA77LXXXVII': false,
+      'NDA77LXXXVIII': false,
+      'NDA77LXXXIX': false,
+      'NDA77XC': false,
+      'NDA77XCI': false,
+      'NDA77XCII': false,
+      'NDA77XCIII': false,
+      'NDA77XCIV': false,
+      'NDA77XCV': false,
+      'NDA77XCVI': false,
+      'NDA77XCVII': false,
+      'NDA77XCVIII': false,
+      'NDA77XCIX': false,
+      'NDA77C': false
+    };
+
+    const form = document.getElementById('authForm');
+    const keyInput = document.getElementById('accessKey');
+    const pdfViewer = document.getElementById('pdfViewer');
+    const previewSection = document.getElementById('previewSection');
+    const paymentSection = document.getElementById('paymentSection');
+    const whatsappBtn = document.getElementById('whatsappBtn');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const storedKey = localStorage.getItem('nda_access_key');
+      const inputKey = keyInput.value.trim().toUpperCase();
+      if (storedKey && storedKey === inputKey) {
+        form.style.display = 'none';
+        previewSection.style.display = 'none';
+        paymentSection.style.display = 'none';
+        whatsappBtn.style.display = 'none';
+        pdfViewer.style.display = 'block';
+        return;
+      }
+      e.preventDefault();
+      const key = keyInput.value.trim().toUpperCase();
+      if (allowedKeys.hasOwnProperty(inputKey) && !allowedKeys[inputKey]) {
+        allowedKeys[inputKey] = true;
+        localStorage.setItem('nda_access_key', inputKey);
+        allowedKeys[key] = true;
+        form.style.display = 'none';
+        previewSection.style.display = 'none';
+        paymentSection.style.display = 'none';
+        whatsappBtn.style.display = 'none';
+        pdfViewer.style.display = 'block';
+      } else if (allowedKeys[key]) {
+        alert('This key has already been used. Please contact admin.');
+      } else {
+        alert('Invalid access key.');
+      }
+    });
+
+    document.addEventListener('contextmenu', e => e.preventDefault());
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'PrintScreen' || (e.ctrlKey && e.key === 'p')) {
+        alert('Screenshots are disabled for this page.');
+        e.preventDefault();
+      }
+    });
+
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) {
+        pdfViewer.style.filter = 'blur(12px)';
+      } else {
+        pdfViewer.style.filter = 'none';
+      }
+    });
+  </script>
+</body>
+  </html>
